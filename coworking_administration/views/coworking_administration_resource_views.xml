@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="coworking_administration_resource_tree" model="ir.ui.view">
+        <field name="name">coworking.administration.resource.tree</field>
+        <field name="model">coworking.administration.resource</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="coworking_administration_resource_form" model="ir.ui.view">
+        <field name="name">coworking.administration.resource.form</field>
+        <field name="model">coworking.administration.resource</field>
+        <field name="arch" type="xml">
+            <form string="Resource">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="coworking_administration_resource_act_window" model="ir.actions.act_window">
+        <field name="name">Resource</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">coworking.administration.resource</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="coworking_administration_resource_menu"
+            action="coworking_administration_resource_act_window"
+            parent="coworking_administration_menu_root"
+            name="Resource" sequence="100"/>
+</odoo>

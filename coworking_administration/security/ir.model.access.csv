@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_coworking_administration_resource_group_user,access_coworking_administration_resource_group_user,model_coworking_administration_resource,base.group_user,1,1,1,1
+
