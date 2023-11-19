@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo noupdate="1">
-
+<!--    <record id="meeting_room_01" model="resource">-->
+<!--        <field name="name">Meeting room 101</field>-->
+<!--         <field name="resource_type">Red Room</field>-->
+<!--        <field name="resource_owner">Office manager level 1</field>-->
+<!--    </record>-->
+<!--    <record id="meeting_room_02" model="resource">-->
+<!--        <field name="name">Meeting room 102</field>-->
+<!--         <field name="resource_type">White Room</field>-->
+<!--        <field name="resource_owner">Office manager level 2</field>-->
+<!--    </record>-->
+<!--    <record id="meeting_room_03" model="resource">-->
+<!--        <field name="name">Meeting room 103</field>-->
+<!--         <field name="resource_type">Blue Room</field>-->
+<!--        <field name="resource_owner">Office manager level 3</field>-->
+<!--    </record>-->
 </odoo>

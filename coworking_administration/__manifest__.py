@@ -1,10 +1,10 @@
 {
     "name": "Coworking administration",
-    "summary": "Administration system will help to manage booking proces for Coworking places",
+    "summary": "Administration system manage booking proces for Coworking",
 
     "author": "Alex",
     "license": "LGPL-3",
-    "website": "https://github.com/",
+    "website": "https://github.com/aexitmcaf",
     "category": "Customization booking",
     "version": "16.0.1.0.0",
     "depends": ["base"],
@@ -13,9 +13,13 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'views/coworking_administration_menus.xml',
-        'views/coworking_administration_resource_views.xml',
-
+        'security/coworking_groups.xml',
+        'security/coworking_security.xml',
+        'views/coworking_resource_booking_views.xml',
+        'views/coworking_resource_booking_tag_views.xml',
+        'views/coworking_resource_views.xml',
+        'views/coworking_resource_existence_views.xml',
+        'views/coworking_menus.xml',
     ],
     'demo': [
         'demo/resource_demo.xml',

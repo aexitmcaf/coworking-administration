@@ -46,4 +46,4 @@ Authors
 Contributors
 ------------
 
-* Alex <https://github.com/>
+* Alex <https://github.com/aexitmcaf"/>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="coworking_view_resource_tree" model="ir.ui.view">
+            <field name="name">resource.tree</field>
+            <field name="model">resource</field>
+            <field name="arch" type="xml">
+                <tree name="Resource">
+                    <field name="name" width="6"/>
+                    <field name="resource_type" width="6"/>
+                    <field name="resource_owner" width="6"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="coworking_view_resource_form">
+            <field name="name">resource.form</field>
+            <field name="model">resource</field>
+            <field name="arch" type="xml">
+                <form name="Resource">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="resource_type" required="1"/>
+                                <field name="resource_owner" required="1"/>
+                                <field name="resource_tags" required="1" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            </group>
+                            <group>
+                                <field name="image" widget="image" class="oe_avatar" filename="name"/>
+                            </group>
+                            <notebook>
+                                <page string="Confirmed bookings">
+                                    <field name="confirmed_bookings" mode="tree">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="booking_status"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                                <page string="Cancelled booking">
+                                    <field name="cancelled_bookings" mode="tree">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="booking_status"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_coworking_resource_type_tree" model="ir.ui.view">
+            <field name="name">resource.type.tree</field>
+            <field name="model">resource.type</field>
+            <field name="arch" type="xml">
+                <tree name="Resource Types" editable="top">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_coworking_resource_type_form" model="ir.ui.view">
+            <field name="name">resource.type.form</field>
+            <field name="model">resource.type</field>
+            <field name="arch" type="xml">
+                <form string="Resource Type">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_coworking_resource_tag_tree" model="ir.ui.view">
+            <field name="name">resource.tag.tree</field>
+            <field name="model">resource.tag</field>
+            <field name="arch" type="xml">
+                <tree name="Resource Tags" editable="top">
+                    <field name="name"/>
+                    <field name="color" widget="color_picker"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_coworking_resource_tag_form" model="ir.ui.view">
+            <field name="name">resource.tag.form</field>
+            <field name="model">resource.tag</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="color" widget="color_picker"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_resource_tag_act_window" model="ir.actions.act_window">
+            <field name="name">Resource Tag</field>
+            <field name="res_model">resource.tag</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_resource_type_act_window" model="ir.actions.act_window">
+            <field name="name">Resource Type</field>
+            <field name="res_model">resource.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_resource_act_window"
+                model="ir.actions.act_window">
+            <field name="name">Resource</field>
+            <field name="res_model">resource</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+</odoo>

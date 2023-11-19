@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_resource_booking_form"
+            model="ir.ui.view">
+        <field name="name">resource.booking.form</field>
+        <field name="model">resource.booking</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="title" class="oe_inline"/>
+                        </group>
+                        <group>
+                            <field name="start_datetime" class="oe_inline"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="end_datetime"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="booking_tag_id" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        </group>
+
+                    </group>
+                    <group>
+                        <group>
+                            <field name="resource_description"/>
+                        </group>
+                        <group>
+                            <field name="creator" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_resource_booking_tree"
+            model="ir.ui.view">
+        <field name="name">resource.booking.tree</field>
+        <field name="model">resource.booking</field>
+        <field name="arch" type="xml">
+            <tree name="Resource booking">
+                <header>
+                    <button name="update_booking_status_cancel" string="Cancel" class="oe_highlight" type="object"/>
+                    <button name="update_booking_status_confirm" string="Confirm" class="oe_highlight" type="object"/>
+                </header>
+                <field name="title" width="4"/>
+                <field name="name" width="4"/>
+                <field name="start_datetime" width="4"/>
+                <field name="end_datetime" width="4"/>
+                <field name="creator" width="4"/>
+                <field name="booking_status" width="4"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="resource_booking_view_search" model="ir.ui.view">
+        <field name="name">resource.booking.view.search</field>
+        <field name="model">resource.booking</field>
+        <field name="arch" type="xml">
+            <search string="Resource booking">
+                <field name="name"/>
+                <field name="title"/>
+                <field name="booking_tag_id"/>
+                <filter string="My booking" name="user_id"
+                        domain="[('user_id', '=', uid)]" icon="terp-personal"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view"
+            id="view_resource_booking_calendar">
+        <field name="name">resource.booking.calendar</field>
+        <field name="model">resource.booking</field>
+        <field name="arch" type="xml">
+            <calendar string="Resource Booking Calendar" date_start="start_datetime">
+                <field name="title" width="4"/>
+                <field name="name" width="4" filters="1"/>
+                <field name="start_datetime" width="4"/>
+                <field name="end_datetime" width="4"/>
+                <field name="creator" width="4"/>
+                <field name="booking_status" width="4"/>
+                <field name="booking_tag_id" width="4"/>
+            </calendar>
+
+        </field>
+    </record>
+
+    <record id="action_resource_booking_act_window"
+            model="ir.actions.act_window">
+        <field name="name">Resource booking</field>
+        <field name="res_model">resource.booking</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="search_view_id" ref="resource_booking_view_search"/>
+    </record>
+</odoo>
+

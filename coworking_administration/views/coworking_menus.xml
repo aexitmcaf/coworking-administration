@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <menuitem id="menu_root"
+              web_icon="coworking_administration, static/description/icon.png"
+              name="Coworking administration"
+              sequence="1"
+    />
+
+    <menuitem id="booking_menu"
+              name="Booking"
+              parent="menu_root"
+              sequence="1"
+    />
+
+    <menuitem id="resource_booking"
+              name="Resource Booking"
+              parent="booking_menu"
+              action="action_resource_booking_act_window"
+              />
+
+    <menuitem id="menu_resources_existence"
+              name="Resources"
+              parent="menu_root"
+              sequence="9"/>
+
+    <menuitem id="resource_existence_by_all"
+              name="Resource Existence"
+              parent="booking_menu"
+              action="action_resource_existence"
+    />
+
+    <menuitem id="menu_resource_existence"
+              name="Resource"
+              parent="menu_resources_existence"
+              action="action_resource_act_window"/>
+
+    <menuitem id="menu_resource_tag"
+              name="Resource Tags"
+              parent="menu_resources_existence"
+              action="action_resource_tag_act_window"/>
+
+    <menuitem id="menu_resource_type"
+              name="Resource Type"
+              parent="menu_resources_existence"
+              action="action_resource_type_act_window"/>
+
+    <menuitem id="menu_booking_tags"
+              name="Resource Booking Tags"
+              parent="menu_resources_existence"
+              action="action_resource_booking_tag_act_window"/>
+
+
+</odoo>
