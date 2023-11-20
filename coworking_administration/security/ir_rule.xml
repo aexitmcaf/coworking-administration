@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo noupdate="1">
+    <record id="coworking_rule_user" model="ir.rule">
+        <field name="name">Coworking users can only view booking menu</field>
+        <field name="model_id" ref="model_resource"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_coworking_user'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="false"/>
+    </record>
+
+    <record id="coworking_rule_manager" model="ir.rule">
+        <field name="name">Coworking manager can view booking and resources menu</field>
+        <field name="model_id" ref="model_resource"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_coworking_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="coworking_rule_admin" model="ir.rule">
+        <field name="name">Library administrators have full rights on books</field>
+        <field name="model_id" ref="model_resource"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_coworking_admin'))]"/>
+    </record>
+</odoo>

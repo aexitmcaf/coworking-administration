@@ -1,17 +1,17 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
-access_resource_group_user,access_resource_group_user,model_resource,base.group_user,1,1,1,1
+access_resource,access_resource,model_resource,base.group_user,1,1,1,1
 
-access_resource_existence_group_user,access_resource_existence_group_user,model_resource_existence,base.group_user,1,1,1,1
+access_resource_existence,access_resource_existence,model_resource_existence,base.group_user,1,1,1,1
 
-access_resource_booking_group_user,access_resource_booking_group_user,model_resource_booking,base.group_user,1,1,1,1
+access_resource_booking,access_resource_booking,model_resource_booking,base.group_user,1,1,1,1
 
-access_resource_type_group_user,access_resource_type_group_user,model_resource_type,base.group_user,1,1,1,1
+access_resource_type,access_resource_type,model_resource_type,base.group_user,1,1,1,1
 
-access_resource_tag_group_user,access_resource_tag_group_user,model_resource_tag,base.group_user,1,1,1,1
+access_resource_tag,access_resource_tag,model_resource_tag,base.group_user,1,1,1,1
 
-access_resource_existence_by_resource_user,access_resource_existence_by_resource_group_user,model_resource_existence_by_resource,base.group_user,1,1,1,1
+access_resource_existence_by_resource_user,access_resource_existence_by_resource,model_resource_existence_by_resource,base.group_user,1,1,1,1
 
-access_resource_existence_by_dates_user,access_resource_existence_by_dates_group_user,model_resource_existence_by_dates,base.group_user,1,1,1,1
+access_resource_existence_by_dates_user,access_resource_existence_by_dates,model_resource_existence_by_dates,base.group_user,1,1,1,1
 
-access_resource_booking_tag_group_user,access_resource_booking_tag_group_user,model_resource_booking_tag,base.group_user,1,1,1,1
+access_resource_booking_tag,access_resource_booking_tag,model_resource_booking_tag,base.group_user,1,1,1,1
