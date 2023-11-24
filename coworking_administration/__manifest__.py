@@ -15,6 +15,7 @@
         'security/ir.model.access.csv',
         'security/coworking_groups.xml',
         'security/coworking_security.xml',
+        'security/ir_rule.xml',
         'views/coworking_resource_booking_views.xml',
         'views/coworking_resource_booking_tag_views.xml',
         'views/coworking_resource_views.xml',
