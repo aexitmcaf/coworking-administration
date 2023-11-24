@@ -29,13 +29,13 @@ class CoworkingResource(models.Model):
     @api.depends('booking_ids')
     def _compute_confirmed(self):
         for record in self:
-            record.confirmed_booking = record.booking_ids.filtered(
+            record.confirmed_bookings = record.booking_ids.filtered(
                 lambda r: r.booking_status == 'confirmed')
 
     @api.depends('booking_ids')
     def _compute_cancelled(self):
         for record in self:
-            record.cancelled_booking = record.booking_ids.filtered(
+            record.cancelled_bookings = record.booking_ids.filtered(
                 lambda r: r.booking_status == 'cancelled')
 
 

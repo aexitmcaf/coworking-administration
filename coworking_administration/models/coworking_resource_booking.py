@@ -21,7 +21,9 @@ class ResourceBooking(models.Model):
 
     title = fields.Char(string='Title ', required=True)
     name = fields.Many2one('resource',
-                           string="Resource Name", required=True)
+                           string='Resource Name', options={'no_create': True})
+    resource_type = fields.Many2one('resource.type',
+                                    string='Resource Type', options={'no_create': True})
     start_datetime = fields.Datetime(string='Start Date & Time',
                                      default=lambda self:
                                      fields.Datetime.now(),
@@ -96,3 +98,13 @@ class ResourceBooking(models.Model):
                 raise exceptions.ValidationError(_("Bookings for "
                                                    "past dates are "
                                                    "not allowed."))
+
+    @api.onchange('name')
+    def _onchange_name(self):
+        if self.name:
+            return {'domain': {'name': [('resource_type', '=', self.name.resource_type.id), ('id', '!=', False)]}}
+
+    @api.onchange('resource_type')
+    def _onchange_resource_type(self):
+        if self.name:
+            return {'domain': {'name': [('resource_type', '=', self.resource_type.id), ('id', '!=', False)]}}

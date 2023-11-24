@@ -17,12 +17,13 @@
               name="Resource Booking"
               parent="booking_menu"
               action="action_resource_booking_act_window"
-              />
+    />
 
     <menuitem id="menu_resources_existence"
               name="Resources"
               parent="menu_root"
-              sequence="9"/>
+              sequence="9"
+              groups="group_coworking_manager"/>
 
     <menuitem id="resource_existence_by_all"
               name="Resource Existence"
@@ -33,22 +34,26 @@
     <menuitem id="menu_resource_existence"
               name="Resource"
               parent="menu_resources_existence"
-              action="action_resource_act_window"/>
+              action="action_resource_act_window"
+              groups="group_coworking_manager"/>
 
     <menuitem id="menu_resource_tag"
               name="Resource Tags"
               parent="menu_resources_existence"
-              action="action_resource_tag_act_window"/>
+              action="action_resource_tag_act_window"
+              groups="group_coworking_manager"/>
 
     <menuitem id="menu_resource_type"
               name="Resource Type"
               parent="menu_resources_existence"
-              action="action_resource_type_act_window"/>
+              action="action_resource_type_act_window"
+              groups="group_coworking_manager"/>
 
     <menuitem id="menu_booking_tags"
               name="Resource Booking Tags"
               parent="menu_resources_existence"
-              action="action_resource_booking_tag_act_window"/>
+              action="action_resource_booking_tag_act_window"
+              groups="group_coworking_manager"/>
 
 
 </odoo>
