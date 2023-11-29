@@ -3,7 +3,7 @@
 <odoo noupdate="1">
     <record id="coworking_rule_user" model="ir.rule">
         <field name="name">Coworking users can only view booking menu</field>
-        <field name="model_id" ref="base.model_resource_booking"/>
+        <field name="model_id" ref="model_resource_booking"/>
         <field name="domain_force">[('create_uid', '=', user.id)]</field>
         <field name="groups" eval="[(4, ref('group_coworking_user'))]"/>
         <field name="perm_read" eval="True"/>
